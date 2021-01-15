@@ -15,6 +15,9 @@ class CreateAnswers < ActiveRecord::Migration[5.2]
       t.text:ans9
       t.text:ans10
       t.timestamps
+      t.integer:score
+      t.string:judge
+      t.integer:cnum
     end
   end
 end

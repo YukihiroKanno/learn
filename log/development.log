@@ -1072,3 +1072,93 @@ Processing by RootController#index as HTML
 Completed 200 OK in 525ms (Views: 508.6ms | ActiveRecord: 1.4ms | Allocations: 57955)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.111.105 at 2021-01-15 23:55:42 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 708)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 21.6ms | Allocations: 9688)
+Completed 200 OK in 915ms (Views: 899.6ms | ActiveRecord: 1.3ms | Allocations: 63289)
+
+
+Started GET "/users/sign_up" for 126.163.111.105 at 2021-01-15 23:55:54 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://kannonanayuu-1.paiza-user-free.cloud:3000/root/top
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 0.3ms | Allocations: 5792)
+
+
+Started GET "/root/top" for 126.163.111.105 at 2021-01-15 23:55:54 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RootController#top as HTML
+  Rendering root/top.html.erb within layouts/application
+  Rendered root/top.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1957)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 2.1ms | Allocations: 998)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.2ms | Allocations: 9612)
+
+
+Started GET "/mines" for 126.163.111.105 at 2021-01-15 23:56:02 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MinesController#index as HTML
+  Parameters: {"authenticity_token"=>"2mdxTXiEdU/KjqJ8yFDYYlCdTtEtLH5GrPMpYOpc7/jQd/gWBkfhUn9WBJI2W/Y2VdRH+nMYT2Z0tBVY2v1+4g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/mines_controller.rb:4:in `index'
+  Rendering mines/index.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:7
+  [1m[36mDrill Load (0.2ms)[0m  [1m[34mSELECT "drills".* FROM "drills" WHERE "drills"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:19
+  [1m[36mTitle Load (0.2ms)[0m  [1m[34mSELECT "titles".* FROM "titles" WHERE "titles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:69
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:81
+  Rendered mines/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 4000)
+  Rendered layouts/_list.html.erb (Duration: 0.3ms | Allocations: 105)
+Completed 200 OK in 46ms (Views: 22.1ms | ActiveRecord: 2.6ms | Allocations: 17945)
+
+
+Started DELETE "/users/sign_out" for 126.163.111.105 at 2021-01-15 23:56:14 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BJ2e1uF8Kn7EOclRG+Ex9JDATQGB8j3dFdBUr2rNBq8OjReNn7++Y3Hhb7/l6h+glYlEKt/GDP3Nl2iXWmyXtQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://kannonanayuu-1.paiza-user-free.cloud:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms | Allocations: 3505)
+
+
+Started GET "/" for 126.163.111.105 at 2021-01-15 23:56:14 +0000
+Cannot render console from 126.163.111.105! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RootController#index as HTML
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_list.html.erb (Duration: 2.4ms | Allocations: 140)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 6829)
+
+
