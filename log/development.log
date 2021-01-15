@@ -730,3 +730,276 @@ Processing by RootController#index as HTML
 Completed 200 OK in 738ms (Views: 729.6ms | ActiveRecord: 0.0ms | Allocations: 187332)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20190327102933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190327102933"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAnswers (20190327104224)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer, "jirei" integer, "user_id" integer, "ans1" text, "ans2" text, "ans3" text, "ans4" text, "ans5" text, "ans6" text, "ans7" text, "ans8" text, "ans9" text, "ans10" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190327104224"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20190327104240)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "answer_id" integer, "user_id" integer, "judge1" integer, "ans1" text, "judge2" integer, "ans2" text, "judge3" integer, "ans3" text, "judge4" integer, "ans4" text, "judge5" integer, "ans5" text, "judge6" integer, "ans6" text, "judge7" integer, "ans7" text, "judge8" integer, "ans8" text, "judge9" integer, "ans9" text, "judge10" integer, "ans10" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190327104240"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCommunications (20190329082709)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "communications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title_id" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329082709"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrills (20190330232342)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "drills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "strt" text, "s" text, "w" text, "o" text, "t" text, "j1" text, "j2" text, "j3" text, "j4" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190330232342"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProfiles (20190331103902)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "capa" integer, "expe" integer, "most1" integer, "most2" integer, "most3" integer, "most4" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190331103902"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTitles (20190403103636)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "titles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "contents" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190403103636"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToCommunication (20190405222251)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "communications" ADD "user_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190405222251"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddScoreToComments (20190410115452)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "comments" ADD "score" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190410115452"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddScoreToAnswers (20190412135602)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "answers" ADD "score" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190412135602"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddJudgeToAnswers (20190412135630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "answers" ADD "judge" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190412135630"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20190413023507)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "drills_id" integer, "user_id" integer, "strt" text, "s" text, "w" text, "o" text, "t" text, "j1" text, "j2" text, "j3" text, "j4" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190413023507"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveDrillsIdFromReviews (20190413112958)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areviews" ("id" integer NOT NULL PRIMARY KEY, "drills_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "strt" text DEFAULT NULL, "s" text DEFAULT NULL, "w" text DEFAULT NULL, "o" text DEFAULT NULL, "t" text DEFAULT NULL, "j1" text DEFAULT NULL, "j2" text DEFAULT NULL, "j3" text DEFAULT NULL, "j4" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areviews" ("id","drills_id","user_id","strt","s","w","o","t","j1","j2","j3","j4","created_at","updated_at")
+                     SELECT "id","drills_id","user_id","strt","s","w","o","t","j1","j2","j3","j4","created_at","updated_at" FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer DEFAULT NULL, "strt" text DEFAULT NULL, "s" text DEFAULT NULL, "w" text DEFAULT NULL, "o" text DEFAULT NULL, "t" text DEFAULT NULL, "j1" text DEFAULT NULL, "j2" text DEFAULT NULL, "j3" text DEFAULT NULL, "j4" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("id","user_id","strt","s","w","o","t","j1","j2","j3","j4","created_at","updated_at")
+                     SELECT "id","user_id","strt","s","w","o","t","j1","j2","j3","j4","created_at","updated_at" FROM "areviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190413112958"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDrillIdToReviews (20190413113221)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD "drill_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190413113221"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCnumToAnswers (20210103124324)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "answers" ADD "cnum" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210103124324"]]
+  [1m[35m (25.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProfileToProfiles (20210103235301)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "profiles" ADD "profile" text[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210103235301"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateConsiders (20210110102720)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "considers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer, "jirei" integer, "user_id" integer, "summary" text, "q1" text, "q2" text, "q3" text, "q4" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210110102720"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-15 11:08:26.371302"], ["updated_at", "2021-01-15 11:08:26.371302"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.118.70 at 2021-01-15 11:08:48 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 596)
+  Rendered layouts/_list.html.erb (Duration: 3.2ms | Allocations: 389)
+Completed 200 OK in 343ms (Views: 330.4ms | ActiveRecord: 0.0ms | Allocations: 39284)
+
+
+Started GET "/users/sign_in" for 126.163.118.70 at 2021-01-15 11:09:09 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 601)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4697)
+  Rendered layouts/_list.html.erb (Duration: 0.2ms | Allocations: 107)
+Completed 200 OK in 57ms (Views: 24.3ms | ActiveRecord: 0.8ms | Allocations: 20908)
+
+
+Started GET "/users/sign_up" for 126.163.118.70 at 2021-01-15 11:09:32 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 197)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2192)
+  Rendered layouts/_list.html.erb (Duration: 0.3ms | Allocations: 107)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 9745)
+
+
+Started POST "/users" for 126.163.118.70 at 2021-01-15 11:09:52 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"4uxsOsAurZbNMLUq/FxSF+o4v2fg6shnhqvMkOLAjAVVBv1EOOKtzhPATxcqv7wpVTOhLh+pBNRGHO4DtQC9lQ==", "user"=>{"name"=>"綾瀬", "email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "a@a"], ["encrypted_password", "$2a$12$t9v6xeP/DhXdLuSvkc02BuCOSTDpBJLWm/LfEOf7cfCuIt8O.bthe"], ["name", "綾瀬"], ["created_at", "2021-01-15 11:09:52.640994"], ["updated_at", "2021-01-15 11:09:52.640994"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://kannonanayuu-1.paiza-user-free.cloud:3000/root/top
+Completed 302 Found in 355ms (ActiveRecord: 7.8ms | Allocations: 11672)
+
+
+Started GET "/root/top" for 126.163.118.70 at 2021-01-15 11:09:52 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RootController#top as HTML
+  Rendering root/top.html.erb within layouts/application
+  Rendered root/top.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1746)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2340)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"answers"}):
+    12:                   　ついて考察することができます。
+    13: 	           </p>
+    14: 	           <br>
+    15: 	           <div><%= button_to "Start", {controller: 'answers', action: 'index'}, {method: :get} %></div>
+    16:            </section>
+    17:        </div>
+    18:        <div class ="blog-item clearfix">
+  
+app/views/root/top.html.erb:15
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.118.70 at 2021-01-15 11:11:50 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 596)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 20.5ms | Allocations: 9691)
+Completed 200 OK in 213ms (Views: 204.7ms | ActiveRecord: 1.0ms | Allocations: 48671)
+
+
+Started GET "/users/sign_up" for 126.163.118.70 at 2021-01-15 11:11:58 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://kannonanayuu-1.paiza-user-free.cloud:3000/root/top
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 3582)
+
+
+Started GET "/root/top" for 126.163.118.70 at 2021-01-15 11:11:58 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RootController#top as HTML
+  Rendering root/top.html.erb within layouts/application
+  Rendered root/top.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1953)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 2.1ms | Allocations: 998)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 9530)
+
+
+Started GET "/root/policy" for 126.163.118.70 at 2021-01-15 11:12:09 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RootController#policy as HTML
+  Rendering root/policy.html.erb within layouts/application
+  Rendered root/policy.html.erb within layouts/application (Duration: 1.3ms | Allocations: 193)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 2.2ms | Allocations: 996)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 0.1ms | Allocations: 7713)
+
+
+Started GET "/mines" for 126.163.118.70 at 2021-01-15 11:12:16 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MinesController#index as HTML
+  Parameters: {"authenticity_token"=>"CCSXTa2G430eCN72rwQnKkyN5RzT36W1CWxS4iW89IMCNB4W00V3YKvQeBhRDwl+ScTsN43rlJXRK27aFR1lmQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/mines_controller.rb:4:in `index'
+  Rendering mines/index.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:7
+  [1m[36mDrill Load (0.5ms)[0m  [1m[34mSELECT "drills".* FROM "drills" WHERE "drills"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:19
+  [1m[36mTitle Load (0.1ms)[0m  [1m[34mSELECT "titles".* FROM "titles" WHERE "titles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:69
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/mines/index.html.erb:81
+  Rendered mines/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3997)
+  Rendered layouts/_list.html.erb (Duration: 0.3ms | Allocations: 105)
+Completed 200 OK in 40ms (Views: 16.3ms | ActiveRecord: 2.3ms | Allocations: 17901)
+
+
+Started GET "/members" for 126.163.118.70 at 2021-01-15 11:12:24 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MembersController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/members_controller.rb:4:in `index'
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/members/index.html.erb:12
+  Rendered members/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1300)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_list.html.erb:1
+  Rendered layouts/_list.html.erb (Duration: 1.7ms | Allocations: 985)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 9988)
+
+
