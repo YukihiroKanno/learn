@@ -1,0 +1,43 @@
+<section class = "blog">
+<h2 class="blog-headline">会員リスト</h2>
+<br>
+<p>会員登録数：<%= @sum %></p>
+<br>
+   <div class = "foo">
+    <ul class = "foo1">
+      <li>登録番号</li>
+      <li>名前</li> 
+      <li>登録日</li> 
+      <li>情報を見る。</li>
+  <% @usr.each do |u| %>   
+    </ul>
+     <ul class = "foo2">
+      <li><%= u.id %></li>
+      <li><%= u.name %></li>
+      <li><%= u.created_at.strftime('%Y/%m/%d') %></li>  
+      <li><%= button_to "実行", {controller: 'members', action: 'show'}, {method: :get, params: {id: u.id }} %></li></ul>
+  <% end %>
+ </section>
+ 
+   </section>    
+   <div class = "sidebar">
+     <section class="popular">
+        <h2 class="sidebar-headline">サイトメニュー</h2>
+        <div class="sidebar-contents">
+          <p class="popular-text">　<%= link_to '会員リスト', members_path %></p>      
+          <p class="popular-text">　<%= link_to 'Tolk', titles_path %></p>            
+          <p class="popular-text">　<%= link_to '事例企業分析', drills_path %></p> 
+          <p class="popular-text">　<%= link_to '新規投稿', titles_path %></p>           
+         </div>
+      </section>
+   </div>
+<br>
+<br>
+  <%= link_to :back do %>
+     <button>前に戻る</button>
+   <% end %>
+
+ 
+ 
+ 
+ 

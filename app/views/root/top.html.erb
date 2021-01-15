@@ -1,0 +1,60 @@
+ <section class = "blog">
+     <h2 class="blog-headline">『学びの庭』のメニュー</h2>
+     <div class="blog-box">
+       <div class ="blog-item clearfix">
+           <section class = "blog-text">
+               <h3 class="menu_heda">■過去問</h3>
+               <br>
+               <p>
+                ・平成18年~最新の過去問に挑戦できます。<br>
+                ・作成した回答を評価してもらうことができます。<br>
+                ・メンバーの作成した解答を採点することで良い解答とは何かに<br>
+                  　ついて考察することができます。
+	           </p>
+	           <br>
+	           <div><%= button_to "Start", {controller: 'answers', action: 'index'}, {method: :get} %></div>
+           </section>
+       </div>
+       <div class ="blog-item clearfix">
+           <section class = "blog-text">
+             <h3 class="menu_heda">■事例企業</h3>
+               <br>
+               <p>
+                ・中小企業白書の事例企業を使ったトレーニングができます。<br>
+                ・事例企業に関する成長戦略、SOWT分析等から企業の課題と対策を<br>
+                　を考察し結果をメンバーと評価しあうことで２次試験の解答作成<br>
+                　能力のトレーニングができます。
+              </p>
+	           <br>
+	           <div><%= button_to "Start", {controller: 'drills', action: 'index'}, {method: :get} %></div>
+           </section>
+       </div>
+       <div class ="blog-item clearfix">
+           <section class = "blog-text">
+             <h3 class="menu_heda">■Tolk(掲示版)</h3>
+             　<p>　
+                ・自由にトピックを設定してメンバーと交流することができます。
+               </p>
+	           <br>
+	           <div><%= button_to "Start", {controller: 'titles', action: 'index'}, {method: :get} %></div>
+        　</section>
+       </div>
+     </div>  
+</section>
+
+   <div class = "sidebar">
+     <section class="popular">
+        <h2 class="sidebar-headline">サイトメニュー</h2>
+        <div class="sidebar-contents">
+          <p class="popular-text">　<%= link_to 'サイトポリシー', root_policy_path %></p>
+          <p class="popular-text">　<%= link_to '使用方法', root_useage_path %></p>
+          <p class="popular-text">　<%= link_to '会員リスト', members_path %></p>    
+          <p class="popular-text">　<%= link_to 'Tolk', titles_path %></p>            
+          <p class="popular-text">　<%= link_to '過去問分析', answers_path %></p> 
+          <p class="popular-text">　<%= link_to '事例企業分析', drills_path %></p> 
+          <p class="popular-text">　<%= link_to 'マイページ', mines_path %></p> 
+          
+      </section>
+   </div>
+
+

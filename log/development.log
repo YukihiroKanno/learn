@@ -644,3 +644,89 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 877)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.118.70 at 2021-01-15 10:44:26 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.3ms | Allocations: 360)
+Completed 200 OK in 18ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 1876)
+
+
+Started GET "/users/sign_up" for 126.163.118.70 at 2021-01-15 10:44:39 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 196)
+  Rendered /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 514)
+  Rendered /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 4935)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 119.0ms | ActiveRecord: 0.7ms | Allocations: 34787)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.118.70 at 2021-01-15 10:48:07 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.1ms | Allocations: 420)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 2073)
+
+
+Started GET "/users/sign_in" for 126.163.118.70 at 2021-01-15 10:48:21 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 614)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 5593)
+Completed 200 OK in 290ms (Views: 271.8ms | ActiveRecord: 0.8ms | Allocations: 57336)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/ubuntu/learn/config/environment.rb:5)
+Started GET "/" for 126.163.118.70 at 2021-01-15 10:54:58 +0000
+Cannot render console from 126.163.118.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 596)
+  Rendered layouts/_list.html.erb (Duration: 4.5ms | Allocations: 394)
+Completed 200 OK in 738ms (Views: 729.6ms | ActiveRecord: 0.0ms | Allocations: 187332)
+
+
