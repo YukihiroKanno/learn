@@ -1,6 +1,7 @@
 class CreateReviews < ActiveRecord::Migration[5.2]
   def change
     create_table :reviews do |t|
+      t.integer :drills_id
       t.integer :user_id
       t.text "strt"
       t.text "s"
@@ -12,7 +13,6 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.text "j3"
       t.text "j4"
       t.timestamps
-      t.integer:drill_id
     end
   end
 end

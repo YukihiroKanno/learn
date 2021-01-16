@@ -24,7 +24,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
      t.integer:judge10
      t.text:ans10
      t.timestamps
-     t.integer:score
     end
   end
 end

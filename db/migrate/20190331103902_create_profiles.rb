@@ -9,7 +9,6 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.integer :most3
       t.integer :most4
       t.timestamps
-      t.text:profile
     end
   end
 end
